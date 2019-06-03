@@ -229,13 +229,21 @@ class ArvoreAVL:
 
 	def balancear(self,z,y,x):
 		if y==z.filho_esq and x==y.filho_esq:
+			print("ROTACAO PARA DIREITA\n")
+			print(self)
 			self.rotacao_direita(z)
 		elif y==z.filho_esq and x==y.filho_dir:
+			print("ROTACAO DUPLA PARA DIREITA\n")
+			print(self)
 			self.rotacao_esquerda(y)
 			self.rotacao_direita(z)
 		elif y==z.filho_dir and x==y.filho_dir:
+			print("ROTACAO PARA ESQUERDA\n")
+			print(self)
 			self.rotacao_esquerda(z)
 		elif y==z.filho_dir and x==y.filho_esq:
+			print("ROTACAO DUPLA PARA ESQUERDA\n")
+			print(self)
 			self.rotacao_direita(y)
 			self.rotacao_esquerda(z)
 		else:
@@ -298,8 +306,10 @@ class ArvoreAVL:
 nova_arvore = ArvoreAVL()
 x=0
 while(True):
-    x = input("Deseja adicionar algum numero a arvore?\n1)Sim\n2)Não\n")
+    x = int(input("Deseja adicionar algum numero a arvore?\n1)Sim\n2)Não\n"))
     if x!=1:
         break
     valor = int(input("Qual valor deseja adicionar a arvore?\n"))
-    
+    nova_arvore.insert(valor)
+    print(nova_arvore)
+
